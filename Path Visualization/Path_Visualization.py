@@ -4,6 +4,7 @@ from tkinter import *
 import re
 import pygame
 import keyboard
+from pathlib import Path
 
 pygame.init()
 
@@ -121,11 +122,14 @@ def main_window():
     screen = pygame.display.set_mode([win_d, win_d])
     
     #importing photos
-    red_img = pygame.image.load("D:/Visual Code Python/Path Visualization/Sprites/red.jpg")
-    cyan_img = pygame.image.load("D:/Visual Code Python/Path Visualization/Sprites/cyan.jpg")
-    white_img = pygame.image.load("D:/Visual Code Python/Path Visualization/Sprites/white.jpg")
-    black_img=pygame.image.load("D:/Visual Code Python/Path Visualization/Sprites/black.jpg")
-    blue_img=pygame.image.load("D:/Visual Code Python/Path Visualization/Sprites/blue.jpg")
+    path = Path("")
+    parent_path = str(path.parent.absolute())
+    print(parent_path)
+    red_img = pygame.image.load(parent_path + "/Sprites/red.jpg")
+    cyan_img = pygame.image.load(parent_path +"/Sprites/cyan.jpg")
+    white_img = pygame.image.load(parent_path +"/Sprites/white.jpg")
+    black_img=pygame.image.load(parent_path +"/Sprites/black.jpg")
+    blue_img=pygame.image.load(parent_path +"/Sprites/blue.jpg")
     
     Q = [] # queue
     dx = [0, 1, 0, -1] #directional vectors
